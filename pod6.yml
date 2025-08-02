@@ -1,0 +1,20 @@
+---
+kind: ReplicaSet
+apiVersion: apps/v1
+metadata:
+  name: myreplica
+spec:
+  replicas: 2
+  selector: 
+   matchExpressions:
+     - {key: name, operator: In, values: [Shashank, Vikas, Malli, Nirmala]}
+  template:
+    metadata:
+      name: testpod
+      labels:
+        name: Shashank
+    spec:
+      containers:
+        - name: coo
+          image: ubuntu
+          command: ["/bin/bash","-c","while true;do echo Hello World;sleep 5; done"]

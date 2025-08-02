@@ -1,0 +1,21 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: mydeploy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      name: Shashank
+  template:
+    metadata:
+      name: testpod
+      labels:
+        name: Shashank
+    spec:
+      containers:
+        - name: coo
+          image: apache-httpd
+          ports:
+            - containerPort: 80

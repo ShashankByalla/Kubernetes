@@ -1,0 +1,24 @@
+---
+kind: Pod
+apiVersion: v1
+metadata:
+  name: testpod
+  annotations:
+    description: This is a Test Pod
+  labels:
+   name: Shashank
+   Roll: 21NCE9999
+   Google: CEO
+spec:
+ containers:
+   - name: coo
+     image: ubuntu
+     command: ["/bin/bash","-c","while true;do echo Hello World;sleep 5;done"]
+   - name: c01
+     image: ubuntu
+     command: ["/bin/bash","-c","while true;do echo Hello Shashank Welcome to Google io;sleep 5;done"]
+     env:
+       - name: MYNAME
+         value: SHASHANK BYALLA  
+ restartPolicy: Never
+---

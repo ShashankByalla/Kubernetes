@@ -1,0 +1,20 @@
+---
+kind: Deployment
+apiVersion: apps/v1
+metadata: 
+  name: mydeployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      myname: Shashank
+  template:
+    metadata:
+      name: testpod
+      labels:
+        myname: Shashank
+    spec:
+      containers:
+        - name: coo
+          image: httpd
+          command: ["/bin/bash","-c","while true;do echo Elon Musk;sleep 5;done"]
