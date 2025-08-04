@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: coo
-          image: apache-httpd
+          image: httpd
           ports:
             - containerPort: 80
